@@ -11,7 +11,7 @@ export default function Register() {
 
   return (
     <>
-      <div className="mx-10 sm:mx-20 lg:mx-20 max-w-full sm:p-10">
+      <div className="mx-10 sm:mx-40 lg:mx-40 max-w-full p-2 sm:p-10">
         <form className="md:grid-cols-2 gap-6 mt-10" onSubmit={() => {}}>
           {/* Nombre completo */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">

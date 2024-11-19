@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <>
 
-    <div className= 'shadow-sm px-10 pb-8 py-8'>
+    <div className= 'px-10 pb-8 py-8'>
         <div className="">
             <p className="">
                 Before signing up, please read the <span className='text-blue-700'>Membership and Use Agreement </span>
@@ -12,7 +12,7 @@ export default function Nav() {
             </p>
         </div>
 
-        <nav className="flex gap-1 pt-6 px-96 text-3xl">
+        <nav className="flex gap-1 pt-6 text-3xl mx-auto w-3/4">
             
             <Link 
                 to='/login'

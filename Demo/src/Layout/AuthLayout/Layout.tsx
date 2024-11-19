@@ -2,17 +2,18 @@ import { Outlet } from 'react-router-dom';
 import Header from '../../Components/Auth/Header';
 import Nav from '../../Components/Auth/Nav';
 
-
 export default function Layout() {
   return (
-    <div>
+    <div className="h-screen w-full flex flex-col">
       <header>
-        <Header/>
+        <Header />
       </header>
-      <Nav/>
-      <main className='bg-gray-300 min-h-screen min-w-full'>
-        <Outlet />
-      </main>
+      <div className="">
+        <Nav />
+        <main className="bg-gray-300 flex-1 min-h-screen min-w-full">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
