@@ -13,6 +13,7 @@ export default function Register() {
     <>
       <div className="mx-10 sm:mx-40 lg:mx-40 max-w-full p-2 sm:p-10">
         <form className="md:grid-cols-2 gap-6 mt-10" onSubmit={() => {}}>
+          
           {/* Nombre completo */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div className="mb-4">
@@ -145,14 +146,30 @@ export default function Register() {
             />
           </div>
 
+          <div className="mb-4">
+              <input 
+                type="checkbox" 
+                className=""
+                
+              />
+              <label 
+                htmlFor=""
+                className="mx-2"
+              >
+                Terms and Conditions
+              </label>
+              <label className="flex text-sm">I accept the Membership and Use Agreement and the Privacy Policy.</label>
+          </div>
+
           {/* Botón de registro */}
-          <div className="md:col-span-2">
+          <div>
             <input
               type="submit"
-              className="w-full flex justify-center bg-indigo-700 hover:bg-indigo-800 p-3 text-white font-bold text-lg cursor-pointer rounded"
-              value="Registrar Empleado"
+              className="mx-auto w-full sm:w-1/2 xl:w-1/5 flex  bg-indigo-700 hover:bg-indigo-800 p-3 text-white font-bold text-lg cursor-pointer rounded"
+              value="Sign Up"
             />
           </div>
+          
         </form>
       </div>
     </>

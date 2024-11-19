@@ -57,6 +57,15 @@ export default function LoginView() {
             />
           </div>
 
+           {/* Botón de registro */}
+           <div>
+            <input
+              type="submit"
+              className="mx-auto w-1/2 flex  bg-indigo-700 hover:bg-indigo-800 p-3 text-white font-bold text-lg cursor-pointer rounded"
+              value="Sign In"
+            />
+          </div>
+
     </div>
   )
 }
