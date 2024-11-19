@@ -10,7 +10,7 @@ export default function Layout() {
       </header>
       <div className="">
         <Nav />
-        <main className="bg-gray-300 flex-1 min-h-screen min-w-full">
+        <main className="bg-gray-300 flex-1">
           <Outlet />
         </main>
       </div>

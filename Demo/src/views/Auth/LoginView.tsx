@@ -9,7 +9,7 @@ export default function LoginView() {
       } = useForm();
 
   return (
-    <div className="mx-auto max-h-lg max-w-lg p-10 py-60">
+    <div className="mx-auto max-w-lg p-10 py-60">
      
       {/* Email */}
       <div className="mb-4">
