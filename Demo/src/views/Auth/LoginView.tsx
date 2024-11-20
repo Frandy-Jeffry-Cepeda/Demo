@@ -1,14 +1,26 @@
 import { useForm } from "react-hook-form";
 import { AuthLogin } from "../../types";
+import { useDispatch } from "react-redux";
+import { login } from "../../services/AuthAPI";
+import { loginUser } from "../../redux/Auth/authSlice";
 
 export default function LoginView() {
 
+  const dispatch = useDispatch();
+
   const { handleSubmit, register, reset, formState: { errors }} = useForm<AuthLogin>();
 
-  const onSubmit = () => {
-    console.log('Login Enviado')
-    reset()
-  }
+  const onSubmit = async (formData: AuthLogin) => {
+    const user = await login(formData);
+    console.log(formData)
+
+    if (user) {
+        dispatch(loginUser(user));
+      
+    } else {
+        console.log('Login fallido');
+    }
+};
 
   return (
     <>

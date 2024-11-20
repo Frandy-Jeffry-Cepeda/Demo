@@ -1,14 +1,27 @@
 import { useForm } from "react-hook-form";
-import { AuthRegister } from "../../types";
+import { DraftUserAuth } from "../../types";
+import { useDispatch } from "react-redux";
+import { createAccount } from "../../services/AuthAPI";
+import { createUser } from "../../redux/Auth/authSlice";
+
 
 export default function Register() {
+
+  const dispatch = useDispatch();
  
-  const { handleSubmit, register, watch, reset, formState: { errors, isSubmitted }} = useForm<AuthRegister>();
+  const { handleSubmit, register, watch, reset, formState: { errors, isSubmitted }} = useForm<DraftUserAuth>();
 
   const password = watch('Password');
 
-  const onSubmit = () => {
-    console.log('Login Enviado')
+  const onSubmit = async (formData : DraftUserAuth) => {
+    const newUser = await createAccount(formData);
+    if (newUser) {
+      // Si la creación fue exitosa, despacha la acción para agregar el usuario al estado
+      dispatch(createUser(newUser));
+      reset();
+    } else {
+      console.error('Error al crear la cuenta');
+    }
     reset()
   }
 

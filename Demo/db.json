@@ -1,3 +1,40 @@
 {
-    "users": []
+  "users": [
+    {
+      "id": "1549",
+      "Id": 1,
+      "FirstName": "Frandy",
+      "LastName": "Jeffry Cepeda",
+      "CompanyName": "a",
+      "Location": "a",
+      "Email": "FrandyCepeda@hotmail.com",
+      "Password": "A123456",
+      "PasswordConfirm": "A123456",
+      "CheckBox": true
+    },
+    {
+      "id": "f59d",
+      "Id": 1,
+      "FirstName": "Roger",
+      "LastName": "Cambas",
+      "CompanyName": "S",
+      "Location": "FASD",
+      "Email": "hOLA@gmail.com",
+      "Password": "a123456",
+      "PasswordConfirm": "a123456",
+      "CheckBox": true
+    },
+    {
+      "id": "a56e",
+      "Id": 1,
+      "FirstName": "asdad",
+      "LastName": "asdad",
+      "CompanyName": "asdasd",
+      "Location": "asdasd",
+      "Email": "asdad@asdadasd.com",
+      "Password": "A123456",
+      "PasswordConfirm": "A123456",
+      "CheckBox": true
+    }
+  ]
 }
