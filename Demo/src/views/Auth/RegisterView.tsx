@@ -53,7 +53,7 @@ export default function Register() {
               <label className="text-gray-800" htmlFor="companyName">
                 Company Name:
               </label>
-              <label className="text-sm">
+              <label className="relative -bottom-[6px] text-sm leading-none">
                 The organization that you are working
               </label>
             </div>
@@ -158,7 +158,7 @@ export default function Register() {
               >
                 Terms and Conditions
               </label>
-              <label className="flex text-sm">I accept the Membership and Use Agreement and the Privacy Policy.</label>
+              <label className="flex text-sm leading-none">I accept the Membership and Use Agreement and the Privacy Policy.</label>
           </div>
 
           {/* Botón de registro */}
@@ -169,7 +169,7 @@ export default function Register() {
               value="Sign Up"
             />
           </div>
-          
+      
         </form>
       </div>
     </>
