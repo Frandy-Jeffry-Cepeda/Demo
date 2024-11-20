@@ -1,18 +1,25 @@
 import { useForm } from "react-hook-form";
+import { AuthRegister } from "../../types";
 
 export default function Register() {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+ 
+  const { handleSubmit, register, watch, reset, formState: { errors, isSubmitted }} = useForm<AuthRegister>();
 
-  {/* HACER ERRORERS DE LOS FORMS */}
+  const password = watch('Password');
+
+  const onSubmit = () => {
+    console.log('Login Enviado')
+    reset()
+  }
 
   return (
     <>
       <div className="mx-10 sm:mx-40 lg:mx-40 max-w-full p-2 sm:p-10">
-        <form className="md:grid-cols-2 gap-6 mt-10" onSubmit={() => {}}>
+        <form 
+          className="md:grid-cols-2 gap-6 mt-10" 
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
           
           {/* Nombre completo */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
@@ -25,10 +32,11 @@ export default function Register() {
                 type="text"
                 className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
                 placeholder="First Name"
-                {...register("firstName", {
+                {...register("FirstName", {
                   required: "El primer nombre es obligatorio",
                 })}
               />
+              { isSubmitted && errors.FirstName && <p className="text-red-600">{errors.FirstName.message}</p>}
             </div>
 
             <div className="mb-4">
@@ -40,10 +48,11 @@ export default function Register() {
                 type="text"
                 className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
                 placeholder="Last Name"
-                {...register("lastName", {
+                {...register("LastName", {
                   required: "El apellido es obligatorio",
                 })}
               />
+              { isSubmitted && errors.LastName && <p className="text-red-600">{errors.LastName.message}</p>}
             </div>
           </div>
 
@@ -62,10 +71,11 @@ export default function Register() {
               type="text"
               className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
               placeholder="Company Name"
-              {...register("companyName", {
+              {...register("CompanyName", {
                 required: "El nombre de la empresa es obligatorio",
               })}
             />
+            { isSubmitted && errors.CompanyName && <p className="text-red-600">{errors.CompanyName.message}</p>}
           </div>
 
           {/* Ubicación */}
@@ -78,10 +88,11 @@ export default function Register() {
               type="text"
               className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
               placeholder="Location"
-              {...register("location", {
+              {...register("Location", {
                 required: "La ubicación es obligatoria",
               })}
             />
+            {isSubmitted && errors.Location && <p className="text-red-600">{errors.Location.message}</p>}
           </div>
 
           {/* Email */}
@@ -94,7 +105,7 @@ export default function Register() {
               type="email"
               className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
               placeholder="Email Address"
-              {...register("email", {
+              {...register("Email", {
                 required: "El email es obligatorio",
                 pattern: {
                   value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -102,6 +113,7 @@ export default function Register() {
                 },
               })}
             />
+            { isSubmitted && errors.Email && <p className="text-red-600">{errors.Email.message}</p>}
           </div>
 
           {/* Contraseña */}
@@ -114,7 +126,7 @@ export default function Register() {
               type="password"
               className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
               placeholder="Password"
-              {...register("password", {
+              {...register("Password", {
                 required: "La contraseña es obligatoria",
                 minLength: {
                   value: 6,
@@ -128,6 +140,7 @@ export default function Register() {
                 },
               })}
             />
+            { isSubmitted && errors.Password && <p className="text-red-600">{errors.Password.message}</p>}
           </div>
 
           {/* Confirmación de contraseña */}
@@ -140,25 +153,32 @@ export default function Register() {
               type="password"
               className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
               placeholder="Password (Again)"
-              {...register("confirmPassword", {
+              {...register("PasswordConfirm", {
                 required: "La confirmación de la contraseña es obligatoria",
+                validate: value => value === password || 'Los Passwords no son iguales'
               })}
             />
+            { isSubmitted && errors.PasswordConfirm && <p className="text-red-600">{errors.PasswordConfirm.message}</p>}
           </div>
 
           <div className="mb-4">
               <input 
+                id="checkbox"
                 type="checkbox" 
-                className=""
-                
+                {...register("CheckBox", {
+                  required: "Los términos son obligatorios",
+                })}
               />
               <label 
-                htmlFor=""
+                htmlFor="TermsNConditions"
                 className="mx-2"
               >
                 Terms and Conditions
               </label>
-              <label className="flex text-sm leading-none">I accept the Membership and Use Agreement and the Privacy Policy.</label>
+              {errors.CheckBox && <p className="text-red-600">{errors.CheckBox.message}</p>}
+              <label className="flex text-sm leading-none">
+                I accept the Membership and Use Agreement and the Privacy Policy.
+              </label>
           </div>
 
           {/* Botón de registro */}
