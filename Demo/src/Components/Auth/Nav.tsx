@@ -7,7 +7,8 @@ export default function Nav() {
         <div className= 'px-10 pb-8 py-8'>
             <div className="">
                 <p className="">
-                    Before signing up, please read the <span className='text-blue-700'>Membership and Use Agreement </span>
+                    Before signing up, please read the 
+                    <span className='text-blue-700'>Membership and Use Agreement </span>
                     and the <span className='text-blue-700' >accept them below.</span>
                 </p>
             </div>

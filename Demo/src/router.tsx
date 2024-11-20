@@ -1,7 +1,9 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Layout from './Layout/AuthLayout/Layout'
 import RegisterView from './views/Auth/RegisterView'
 import LoginView from './views/Auth/LoginView'
+import AuthLayout from './Layout/AuthLayout/AuthLayout'
+import Dashboard from './views/Dashboard'
+import Layout from './Layout/Dashboard/Layout'
 
 
 export default function Router() {
@@ -10,6 +12,10 @@ export default function Router() {
             <Routes>
 
                 <Route element={<Layout/>}>
+                    <Route path='/' element={<Dashboard/>} index />
+                </Route>
+
+                <Route element={<AuthLayout/>}>
                     <Route path='/register' element={<RegisterView/>} index />
                     <Route path='/login' element={<LoginView/>}/>
                 </Route>

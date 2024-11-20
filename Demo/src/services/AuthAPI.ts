@@ -1,18 +1,12 @@
 import api from "../lib/axios";
-import { AuthLogin, authSchema, DraftUserAuth, UserAuth } from "../types";
-import { generateId } from "../utils/counter";
+import { AuthLogin, draftAuthSchema, DraftUserAuth } from "../types";
 
 export async function createAccount(formData: DraftUserAuth ) {
     try {
-        const generatedId = generateId();
-        const userAuthData: UserAuth = {
-            Id: generatedId,
-            ...formData,
-          };
-        console.log(`Enviando datos a: ${import.meta.env.VITE_API_URL}/users`, userAuthData);
-        const { data } = await api.post('/users', userAuthData)
+        console.log(`Enviando datos a: ${import.meta.env.VITE_API_URL}/users`, formData);
+        const { data } = await api.post('/users', formData)
         console.log(data)
-        const response = authSchema.safeParse(data)
+        const response = draftAuthSchema.safeParse(data)
         if(response.success){
             return response.data
         }
@@ -32,7 +26,6 @@ export async function login(formData: AuthLogin) {
 
         const user = data[0]; 
 
-        // Verifica la contraseña
         if (user.Password === Password) {
             const { Password, PasswordConfirm, CheckBox, ...userData } = user; 
             return userData; 

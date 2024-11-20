@@ -1,18 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { DraftUserAuth, AuthLogin } from "../../types"; // Assuming this is defined elsewhere
+import { DraftUserAuth, AuthLogin } from "../../types"; 
 
 type State = {
   users: DraftUserAuth[];
   loggedInUser: AuthLogin | null; 
   isAuthenticated: boolean;
-  currentId: number 
 };
 
 const initialState: State = {
   users: [],
   loggedInUser: null, 
   isAuthenticated: false, 
-  currentId: 0
 };
 
 const authSlice = createSlice({
@@ -21,7 +19,6 @@ const authSlice = createSlice({
   reducers: {
     createUser: (state, action: PayloadAction<DraftUserAuth>) => {
       state.users.push(action.payload);
-      state.currentId + 1
     },
     loginUser: (state, action: PayloadAction<AuthLogin>) => {
         state.loggedInUser = action.payload; 

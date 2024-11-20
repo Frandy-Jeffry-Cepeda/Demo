@@ -10,13 +10,12 @@ export default function Register() {
   const dispatch = useDispatch();
  
   const { handleSubmit, register, watch, reset, formState: { errors, isSubmitted }} = useForm<DraftUserAuth>();
-
+  
   const password = watch('Password');
 
   const onSubmit = async (formData : DraftUserAuth) => {
     const newUser = await createAccount(formData);
     if (newUser) {
-      // Si la creación fue exitosa, despacha la acción para agregar el usuario al estado
       dispatch(createUser(newUser));
       reset();
     } else {
@@ -158,11 +157,11 @@ export default function Register() {
 
           {/* Confirmación de contraseña */}
           <div className="mb-4">
-            <label className="text-gray-800" htmlFor="confirmPassword">
+            <label className="text-gray-800" htmlFor="passwordConfirm">
               Password (Again):
             </label>
             <input
-              id="confirmPassword"
+              id="passwordConfirm"
               type="password"
               className="mt-2 block w-full p-3 bg-gray-50 border border-gray-300 rounded"
               placeholder="Password (Again)"
