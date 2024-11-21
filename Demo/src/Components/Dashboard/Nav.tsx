@@ -11,12 +11,12 @@ const navLinks = [
 
 export default function Nav() {
   return (
-    <nav className="flex gap-10 ">
+    <nav className="flex gap-10 md:text-lg xl:text-2xl ">
        {navLinks.map((link, index) => (
         <Link
           key={index}
           to={link.to}
-          className="text-gray-500 text-xl"
+          className="text-gray-500"
         >
           {link.label}
         </Link>
