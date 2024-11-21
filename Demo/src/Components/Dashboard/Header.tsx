@@ -1,7 +1,6 @@
 import Nav from "./Nav";
 import Logo from "../Logo";
 import MenuNav from "./MenuNav";
-import { UserCircle } from "lucide-react";
 import UserNav from "./UserNav";
 
 
@@ -29,7 +28,7 @@ export default function Header() {
 
       <div className="justify-end items-center gap-3 lg:mx-5 flex sm:flex">
         <button
-          className="bg-blue-600 text-white  my-4 px-[11px] py-2 xl:px-6 xl:py-4 hidden sm:flex"
+          className="bg-blue-600 text-white my-4 px-[10px] py-2 xl:px-6 xl:py-4 hidden sm:flex"
           aria-label="Get started"
         >
           Get started
@@ -39,12 +38,7 @@ export default function Header() {
       </div>
 
       <div className="flex justify-end items-center mx-5 lg:mx-0 lg:hidden">
-        <button
-          type="button"
-          className="font-bold"
-        >
           <MenuNav/>
-        </button>
       </div>
 
     </div>

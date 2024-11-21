@@ -1,4 +1,5 @@
-import Section1 from "@/Layout/Dashboard/Section1"
+import Aside from "@/Components/Dashboard/Aside"
+import Section1 from "@/Components/Dashboard/Section1"
 import { BriefcaseBusiness, Grid2X2, MessageSquareText } from "lucide-react"
 
 export default function Dashboard() {
@@ -25,12 +26,26 @@ export default function Dashboard() {
 
         </div>
 
-        
-        <section className="flex gap-1 px-2 sm:px-10">
+        <div className="md:flex">
+
+
+        <section className="md:w-9/12 flex gap-1 px-2 sm:px-10">
             <article>
               <Section1/>
             </article>
+        </section>
+
+        <aside className="md:w-1/4 hidden md:flex">
+          <section>
+            <article>
+              <Aside/>
+            </article>
           </section>
+        </aside>
+
+
+
+        </div>
 
     </div>
   )

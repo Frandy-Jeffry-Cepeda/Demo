@@ -11,7 +11,7 @@ export const navLinks = [
 
 export default function Nav() {
   return (
-    <nav className="flex gap-10 md:text-lg xl:text-2xl ">
+    <nav className="flex gap-10 md:text-base xl:text-2xl ">
        {navLinks.map((link, index) => (
         <Link
           key={index}

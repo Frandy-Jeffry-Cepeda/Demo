@@ -52,6 +52,31 @@ export default function Section1() {
         is a lot easier, however, if you can muster at leat a little enthusiasm for the topic at hand.
       </p>
 
+      <div className="lg:flex border-2 border-dashed my-10 py-16">
+
+        <div className="w-full">
+
+          <div className="flex flex-col sm:px-5 items-center border-black">
+            <img 
+              src="../../src/Assets/womanpfp.avif" 
+              alt="womanpfp" 
+              className="object-cover w-32 h-32 rounded-full"
+            />
+            <h3 className="text-center py-2 font-bold text-gray-700">Jane Johnson</h3>
+            <h4 className="text-center text-gray-500">Co-founder</h4>
+          </div>
+        </div>
+
+        <div className="flex items-center px-5 lg:px-10">
+          <p>
+            First, a disclaimer - the entire process of writing a blog post often takes more than a couple of hours,
+            even if you can type eighty words per minute and your writing skills are sharp. Writing a blog post often takes more than a couple.
+          </p>
+        </div>
+      </div>
+
+
+
 
     </div>
   )
