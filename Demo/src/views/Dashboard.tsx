@@ -1,5 +1,6 @@
 import Aside from "@/Components/Dashboard/Aside"
 import Section1 from "@/Components/Dashboard/Section1"
+import Section2 from "@/Components/Dashboard/Section2"
 import { BriefcaseBusiness, Grid2X2, MessageSquareText } from "lucide-react"
 
 export default function Dashboard() {
@@ -43,9 +44,13 @@ export default function Dashboard() {
           </section>
         </aside>
 
-
-
         </div>
+
+        <section className="mx-10 pt-5">
+          <article>
+            <Section2/>
+          </article>
+        </section>
 
     </div>
   )
