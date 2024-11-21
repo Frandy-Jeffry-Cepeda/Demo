@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const navLinks = [
+export const navLinks = [
     { to: '/', label: 'Products' },
     { to: '/', label: 'Solutions' },
     { to: '/', label: 'Customers' },
