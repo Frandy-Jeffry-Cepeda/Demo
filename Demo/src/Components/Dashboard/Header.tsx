@@ -1,7 +1,8 @@
-import { UserCircle } from "lucide-react";
 import Nav from "./Nav";
 import Logo from "../Logo";
 import MenuNav from "./MenuNav";
+import { UserCircle } from "lucide-react";
+import UserNav from "./UserNav";
 
 
 export default function Header() {
@@ -33,8 +34,8 @@ export default function Header() {
         >
           Get started
         </button>
-        <UserCircle className="text-gray-500 w-8 h-8 lg:w-[25px] lg:h-8 xl:w-10 xl:h-10"/>
-        <span className="text-gray-500 text-2xl lg:text-2xl xl:text-3xl">EN</span>
+          <UserNav/>
+        <span className="relative bottom-1 text-gray-500 text-2xl lg:text-2xl xl:text-3xl">EN</span>
       </div>
 
       <div className="flex justify-end items-center mx-5 lg:mx-0 lg:hidden">
