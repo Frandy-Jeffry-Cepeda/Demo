@@ -7,7 +7,7 @@ export default function Dashboard() {
 
     <div className=" bg-white m-5">
 
-        <div className="flex gap-1 px-2 pt-10 pb-5 text-[12px] sm:gap-5 sm:px-10 sm:text-sm">
+        <div className="flex gap-1 px-2 pt-10 pb-5 text-[12px] sm:gap-5 sm:px-10 sm:text-sm md:w-3/4">
           
           <div className="flex items-center gap-1">
             <Grid2X2 className="w-4 h-4 sm:w-6 sm:h-6"/>
@@ -35,7 +35,7 @@ export default function Dashboard() {
             </article>
         </section>
 
-        <aside className="md:w-1/4 hidden md:flex">
+        <aside className="md:w-1/4 hidden md:flex sm:mx-10">
           <section>
             <article>
               <Aside/>

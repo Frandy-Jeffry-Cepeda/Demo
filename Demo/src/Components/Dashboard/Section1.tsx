@@ -1,3 +1,4 @@
+import { Beef, Facebook, Github, Instagram, Printer, ShoppingBasket, Twitter } from "lucide-react";
 
 export default function Section1() {
   return (
@@ -67,16 +68,25 @@ export default function Section1() {
           </div>
         </div>
 
-        <div className="flex items-center px-5 lg:px-10">
+        <div className="flex flex-col px-5 lg:px-10">
           <p>
             First, a disclaimer - the entire process of writing a blog post often takes more than a couple of hours,
             even if you can type eighty words per minute and your writing skills are sharp. Writing a blog post often takes more than a couple.
           </p>
+          <br/>
+          <span className="text-blue-500">Author's Profile</span>
         </div>
       </div>
 
-
-
+      <div className="flex justify-center gap-5">
+        <Facebook/>
+        <Instagram/>
+        <Github/>
+        <Beef/>
+        <Printer/>
+        <Twitter/>
+        <ShoppingBasket/>
+      </div>
 
     </div>
   )
