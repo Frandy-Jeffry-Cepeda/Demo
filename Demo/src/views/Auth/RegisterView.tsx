@@ -26,7 +26,7 @@ export default function Register() {
 
   return (
     <>
-      <div className="mx-10 sm:mx-40 lg:mx-40 max-w-full p-2 sm:p-10">
+      <div className="mx-10 lg:mx-20 max-w-full p-2">
         <form 
           className="md:grid-cols-2 gap-6 mt-10" 
           onSubmit={handleSubmit(onSubmit)}
@@ -194,10 +194,10 @@ export default function Register() {
           </div>
 
           {/* Botón de registro */}
-          <div>
+          <div className="mx-auto w-1/2 sm:w-1/2 xl:w-1/5 flex">
             <input
               type="submit"
-              className="mx-auto w-full sm:w-1/2 xl:w-1/5 flex  bg-indigo-700 hover:bg-indigo-800 p-3 text-white font-bold text-lg cursor-pointer rounded"
+              className="w-full bg-indigo-700 hover:bg-indigo-800 p-3 text-white font-bold text-lg cursor-pointer rounded"
               value="Sign Up"
             />
           </div>
