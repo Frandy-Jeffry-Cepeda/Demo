@@ -1,7 +1,7 @@
-import Nav from "./Nav";
 import Logo from "../Logo";
-import MenuNav from "./MenuNav";
+import Nav from "./Nav";
 import UserNav from "./UserNav";
+import MenuNav from "./MenuNav";
 
 
 export default function Header() {

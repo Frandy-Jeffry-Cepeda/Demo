@@ -10,6 +10,7 @@ export const navLinks = [
   ];
 
 export default function Nav() {
+
   return (
     <nav className="flex gap-10 md:text-base xl:text-2xl ">
        {navLinks.map((link, index) => (

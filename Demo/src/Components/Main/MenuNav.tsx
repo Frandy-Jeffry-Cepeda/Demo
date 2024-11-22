@@ -1,9 +1,11 @@
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
 import { MenuIcon } from "lucide-react";
-import { navLinks } from "./Nav";
 import { Link } from "react-router-dom";
 
+import { navLinks } from "./Nav";
+
 export default function MenuNav() {
+
   return (
     <div className="relative">
       <Menubar>
@@ -14,13 +16,15 @@ export default function MenuNav() {
           </MenubarTrigger>
 
           <MenubarContent className="bg-white border border-gray-300 rounded-lg shadow-lg mt-1 min-w-[200px]">
-            {navLinks.map((link, index) => (
-              <MenubarItem key={index} className="px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-                <Link to={link.to}>{link.label}</Link>
-              </MenubarItem>
-            ))}
-
+              {navLinks.map((link, index) => (
+                <MenubarItem
+                key={index} 
+                className="px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                  <Link to={link.to}>{link.label}</Link>
+                </MenubarItem>
+              ))}
           </MenubarContent>
+          
         </MenubarMenu>
       </Menubar>
     </div>

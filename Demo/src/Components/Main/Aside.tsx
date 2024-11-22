@@ -17,8 +17,8 @@ export const recentPost = [
 ];
 
 export default function Aside() {
-  return (
 
+  return (
     <div>
 
       <div className="relative bottom-12">
@@ -56,30 +56,27 @@ export default function Aside() {
       <br/>
 
       <div>
-  <h3 className="font-bold text-lg mb-4">Recent Posts</h3>
-  <div className="flex flex-col space-y-4">
-    {recentPost.map((post, index) => (
-      <div
-        key={index}
-        className="flex justify-between items-center rounded-md cursor-pointer"
-      >
-        <img
-          src={post.src}
-          alt="Post Image"
-          className="w-12 h-12 sm:w-12 sm:h-12 md:w-[60px] md:h-[60px] lg:w-28 lg:h-28 xl:w-36 xl:h-36 object-cover rounded-md"  
-        />
-        <div className="flex flex-col mx-5">
-          <span className="font-bold text-[14px] lg:text-lg">{post.title}</span>
-          <span className="text-gray-500 text-[12px] lg:text-sm xl:text-[20px]">{post.description}</span>
+        <h3 className="font-bold text-lg mb-4">Recent Posts</h3>
+        <div className="flex flex-col space-y-4">
+          {recentPost.map((post, index) => (
+            <div
+              key={index}
+              className="flex justify-between items-center rounded-md cursor-pointer"
+            >
+              <img
+                src={post.src}
+                alt="Post Image"
+                className="w-12 h-12 sm:w-12 sm:h-12 md:w-[60px] md:h-[60px] lg:w-28 lg:h-28 xl:w-36 xl:h-36 object-cover rounded-md"  
+              />
+              <div className="flex flex-col mx-5">
+                <span className="font-bold text-[14px] lg:text-lg">{post.title}</span>
+                <span className="text-gray-500 text-[12px] lg:text-sm xl:text-[20px]">{post.description}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
-
-
-
+      
     </div>
   )
 }

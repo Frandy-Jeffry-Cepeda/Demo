@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { DraftUserAuth } from "../../types";
 import { useDispatch } from "react-redux";
+
+import { DraftUserAuth } from "../../types";
 import { createAccount } from "../../services/AuthAPI";
 import { createUser } from "../../redux/Auth/authSlice";
 

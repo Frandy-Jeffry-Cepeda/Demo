@@ -13,9 +13,7 @@ export default function Nav() {
                 </p>
             </div>
 
-            <nav 
-                className="flex gap-1 pt-6 mx-auto justify-center text-2xl md:text-3xl lg:text-3xl xl:text-3xl"
-                >
+            <nav className="flex gap-1 pt-6 mx-auto justify-center text-2xl md:text-3xl lg:text-3xl xl:text-3xl">
                 
                 <Link 
                     to='/login'
@@ -30,6 +28,7 @@ export default function Nav() {
                 >
                     Sign Up
                 </Link>
+                
             </nav>
         </div>
     </>

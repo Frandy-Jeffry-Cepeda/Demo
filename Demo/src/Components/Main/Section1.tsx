@@ -1,6 +1,7 @@
 import { Beef, Facebook, Github, Instagram, Printer, ShoppingBasket, Twitter } from "lucide-react";
 
 export default function Section1() {
+  
   return (
     <div>
 

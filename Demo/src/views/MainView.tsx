@@ -1,9 +1,10 @@
-import Aside from "@/Components/Dashboard/Aside"
-import Section1 from "@/Components/Dashboard/Section1"
-import Section2 from "@/Components/Dashboard/Section2"
 import { BriefcaseBusiness, Grid2X2, MessageSquareText } from "lucide-react"
 
-export default function Dashboard() {
+import Aside from "@/Components/Main/Aside"
+import Section1 from "@/Components/Main/Section1"
+import Section2 from "@/Components/Main/Section2"
+
+export default function MainView() {
   return (
 
     <div className=" bg-white m-5">
@@ -46,7 +47,7 @@ export default function Dashboard() {
 
         </div>
 
-        <section className="mx-10 pt-5">
+        <section className="mx-10 pt-5 pb-10">
           <article>
             <Section2/>
           </article>

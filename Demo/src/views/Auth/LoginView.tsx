@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
-import { AuthLogin } from "../../types";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { AuthLogin } from "../../types";
 import { login } from "../../services/AuthAPI";
 import { loginUser } from "../../redux/Auth/authSlice";
 
@@ -8,24 +10,27 @@ export default function LoginView() {
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate()
+
   const { handleSubmit, register, reset, formState: { errors }} = useForm<AuthLogin>();
 
-  const onSubmit = async (formData: AuthLogin) => {
-    const user = await login(formData);
-    console.log(formData)
+    const onSubmit = async (formData: AuthLogin) => {
+      const user = await login(formData);
 
-    if (user) {
-        dispatch(loginUser(user));
-      
-    } else {
-        console.log('Login fallido');
-    }
-};
+      if (user) {
+          dispatch(loginUser(user));
+          navigate('/')
+        
+      } else {
+          console.log('Login fallido');
+          reset()
+      }
+  };
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-gray-100 items-center px-5">
-        <div className="relative top-10 sm:top-24 w-full max-w-lg bg-white p-10 rounded-lg shadow-lg">
+      <div className="flex flex-col justify-center bg-gray-100 items-center px-5 pb-10">
+        <div className="relative md:top-10 lg:top-15 w-full max-w-lg bg-white p-10 rounded-lg shadow-lg">
 
           <form 
             onSubmit={handleSubmit(onSubmit)}

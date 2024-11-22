@@ -16,23 +16,25 @@ export default function Section2() {
         </div>
     </div>
 
-    <div className="flex gap-10 justify-center">
+    <div className="flex flex-col sm:items-center lg:flex-row gap-10 justify-center">
         {videos.map((video, index) => (
-            <div 
-            key={index}
-            className="flex flex-col w-full sm:w-1/2 lg:w-1/3 h-auto rounded-lg bg-gray-100 overflow-hidden shadow-md">
-            <img 
-                src={video.src} 
-                alt={video.title} 
-                className="w-full h-48 object-cover rounded-t-lg"
-            />
-            <div className="p-4">
-                <span className="font-bold text-lg">{video.title}</span>
-                <p className="text-gray-500">{video.description}</p>
-            </div>
+            <div
+                key={index}
+                className="flex flex-col sm:w-3/4 lg:w-1/3 rounded-lg bg-gray-100 shadow-md"
+            >
+                <img
+                    src={video.src}
+                    alt={video.title}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div className="p-4">
+                    <span className="font-bold text-lg">{video.title}</span>
+                    <p className="text-gray-500">{video.description}</p>
+                </div>
             </div>
         ))}
     </div>
+
 
     </>
   )
